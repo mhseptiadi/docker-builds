@@ -460,7 +460,7 @@ ENV OPENSRP_SERVER_TAG $opensrp_server_tag
 #openmrs settings
 ARG openmrs_url="http:\/\/localhost:8081\/openmrs\/"
 ARG openmrs_username=admin
-ARG openmrs_password=Admin123
+ARG openmrs_password=C4nT(T0ucH)Th1S
 
 #couchdb settings
 ARG couchdb_username

@@ -80,7 +80,7 @@ WORKDIR /
 #openmrs settings
 ARG openmrs_url="http:\/\/localhost:8081\/openmrs${application_suffix}\/"
 ARG openmrs_username=admin
-ARG openmrs_password=Admin123
+ARG openmrs_password=C4nT(T0ucH)Th1S
 
 #couchdb settings
 ARG couchdb_username
