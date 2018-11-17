@@ -195,8 +195,8 @@ services:
       - tbreach-setup
       - ugandahpv-setup
     ports:
-      - "9090:8080"
-      - "9091:8081"
+      - "9092:8080"
+      - "9093:8081"
     volumes:
         - opensrp_migrations:/etc/migrations
     environment:
