@@ -9,8 +9,14 @@ services:
       MYSQL_USER: ${MYSQL_OPENMRS_USER}
       MYSQL_PASSWORD: ${MYSQL_OPENMRS_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_OPENMRS_DATABASE}
+    command: 
+        --explicit_defaults_for_timestamp
+    ports:
+      - '3306:3306'
   couchdb:
     image: "klaemo/couchdb:1.6.1"
+    ports:
+      - '5984:5984'
     volumes:
       - opensrp_couchdb:/usr/local/var/lib/couchdb
     environment:
@@ -26,6 +32,8 @@ services:
   postgres:
     image: postgres:10.2
     restart: always
+    ports:
+      - '5432:5432'
     environment:
       POSTGRES_USER: ${POSTGRES_OPENSRP_USER}
       POSTGRES_PASSWORD: ${POSTGRES_OPENSRP_PASSWORD}
@@ -39,6 +47,8 @@ services:
           --requirepass ${REDIS_PASSWORD}
       volumes:
         - opensrp_redis:/data
+      ports:
+        - '6379:6379'
   migrations:
       build:
         context: .
@@ -100,8 +110,8 @@ services:
       - migrations
       - redis
     ports:
-      - "9092:8080"
-      - "9093:8081"
+      - "9094:8080"
+      - "9095:8081"
     volumes:
         - opensrp_migrations:/etc/migrations
 volumes:
